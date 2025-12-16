@@ -18,3 +18,8 @@ A collection of various deep learning architectures, models, &amp; their impleme
 |Title | Dataset | Notebooks |
 | --- | --- | --- | 
 | VGG-16 | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/vgg16-cifar10.ipynb)  |
+
+#### [GoogLeNet](https://arxiv.org/pdf/1409.4842)
+|Title | Dataset | Notebooks |
+| --- | --- | --- | 
+| GoogLeNet | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/googlenet-cifar10.ipynb)  |
