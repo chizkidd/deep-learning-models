@@ -23,3 +23,13 @@ A collection of various deep learning architectures, models, &amp; their impleme
 |Title | Dataset | Notebooks |
 | --- | --- | --- | 
 | GoogLeNet | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/googlenet-cifar10.ipynb)  |
+
+
+#### [ResNet](https://arxiv.org/pdf/1409.4842)
+|Title | Dataset | Notebooks |
+| --- | --- | --- | 
+| ResNet-18 | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/resnet18-cifar10.ipynb)  |
+| ResNet-34 | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/resnet34-cifar10.ipynb)  |
+| ResNet-50 | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/resnet50-cifar10.ipynb)  |
+| ResNet-101 | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/resnet101-cifar10.ipynb)  |
+| ResNet-152 | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/resnet152-cifar10.ipynb)  |
