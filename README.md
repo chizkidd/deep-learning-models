@@ -6,8 +6,8 @@ A collection of various deep learning architectures, models, &amp; their impleme
 #### [LeNet](http://vision.stanford.edu/cs598_spring07/papers/Lecun98.pdf)
 |Title | Dataset | Notebooks |
 | --- | --- | --- | 
-| LeNet-5 | MNIST | [![Tensorflow](https://img.shields.io/badge/Tensor-Flow1.0-orange)](tensorflow/lenet5-mnist.ipynb)  |
-| LeNet-5 | CIFAR-10 |  [![Tensorflow](https://img.shields.io/badge/Tensor-Flow1.0-orange)](tensorflow/lenet5-cifar.ipynb)  |
+| LeNet-5 | [MNIST](https://huggingface.co/datasets/ylecun/mnist) | [![Tensorflow](https://img.shields.io/badge/Tensor-Flow1.0-orange)](tensorflow/lenet5-mnist.ipynb)  |
+| LeNet-5 | [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) |  [![Tensorflow](https://img.shields.io/badge/Tensor-Flow1.0-orange)](tensorflow/lenet5-cifar.ipynb)  |
 
 #### [AlexNet](https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf)
 |Title | Dataset | Notebooks |
