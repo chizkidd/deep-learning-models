@@ -19,11 +19,15 @@ A collection of various deep learning architectures, models, &amp; their impleme
 | --- | --- | --- | 
 | VGG-16 | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/vgg16-cifar10.ipynb)  |
 
+#### [Network-in-Network (NiN)](https://arxiv.org/pdf/1312.4400)
+|Title | Dataset | Notebooks |
+| --- | --- | --- | 
+| NiN | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/nin-cifar10.ipynb)  |
+
 #### [GoogLeNet](https://arxiv.org/pdf/1409.4842)
 |Title | Dataset | Notebooks |
 | --- | --- | --- | 
 | GoogLeNet | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/googlenet-cifar10.ipynb)  |
-
 
 #### [ResNet](https://arxiv.org/pdf/1409.4842)
 |Title | Dataset | Notebooks |
