@@ -37,3 +37,10 @@ A collection of various deep learning architectures, models, &amp; their impleme
 | ResNet-50 | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/resnet50-cifar10.ipynb)  |
 | ResNet-101 | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/resnet101-cifar10.ipynb)  |
 | ResNet-152 | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/resnet152-cifar10.ipynb)  |
+
+#### [MobileNet](https://arxiv.org/pdf/1704.04861)
+|Title | Dataset | Notebooks |
+| --- | --- | --- | 
+| MobileNet | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/mobilenet-cifar10.ipynb)  |
+| MobileNet-V2 | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/mobilenet-v2-cifar10.ipynb)  |
+| MobileNet-V3 | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/mobilenet-v3-cifar10.ipynb)  |
