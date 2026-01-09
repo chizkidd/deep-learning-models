@@ -39,8 +39,8 @@ A collection of various deep learning architectures, models, &amp; their impleme
 | ResNet-152 | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/resnet152-cifar10.ipynb)  |
 
 #### [DenseNet](https://arxiv.org/pdf/1608.06993)
-|Title | Description | Daset | Notebooks |
-| --- | --- | --- | --- | 
+|Title | Dataset  | Notebooks |
+| --- | --- | --- |
 | DenseNet-121 | CIFAR-10 |   [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/densenet121-cifar10.ipynb)  |
 
 #### [MobileNet](https://arxiv.org/pdf/1704.04861)
