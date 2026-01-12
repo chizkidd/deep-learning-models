@@ -50,3 +50,9 @@ A collection of various deep learning architectures, models, &amp; their impleme
 | [MobileNet-V2](https://arxiv.org/pdf/1801.04381) | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/mobilenet-v2-cifar10.ipynb)  |
 | [MobileNet-V3-Small](https://arxiv.org/pdf/1905.02244) | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/mobilenet-v3-small-cifar10.ipynb)  |
 | [MobileNet-V3-Large](https://arxiv.org/pdf/1905.02244) | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/mobilenet-v3-large-cifar10.ipynb)  |
+
+#### [ShuffleNet](https://arxiv.org/pdf/1707.01083)
+|Title | Dataset | Notebooks |
+| --- | --- | --- | 
+| ShuffleNet | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/shufflenet-v1-cifar10.ipynb)  |
+| [ShuffleNet-V2](https://arxiv.org/abs/1807.11164) | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/shufflenet-v2-cifar10.ipynb)  |
