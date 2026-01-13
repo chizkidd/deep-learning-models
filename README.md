@@ -56,3 +56,9 @@ A collection of various deep learning architectures, models, &amp; their impleme
 | --- | --- | --- | 
 | ShuffleNet | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/shufflenet-v1-cifar10.ipynb)  |
 | [ShuffleNet-V2](https://arxiv.org/abs/1807.11164) | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/shufflenet-v2-cifar10.ipynb)  |
+
+
+#### [EfficientNet](https://arxiv.org/pdf/1905.11946)
+|Title | Dataset | Notebooks |
+| --- | --- | --- | 
+| EfficientNet | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/efficientnet-B0-cifar10.ipynb)  
