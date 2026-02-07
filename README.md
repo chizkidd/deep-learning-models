@@ -61,4 +61,4 @@ A collection of various deep learning architectures, models, &amp; their impleme
 #### [EfficientNet](https://arxiv.org/pdf/1905.11946)
 |Title | Dataset | Notebooks |
 | --- | --- | --- | 
-| EfficientNet | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/efficientnet-B0-cifar10.ipynb)  
+| EfficientNet-B0 | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/efficientnet-B0-cifar10.ipynb)  
