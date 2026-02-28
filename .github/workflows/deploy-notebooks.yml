@@ -1,0 +1,240 @@
+name: Deploy Notebooks to GH Pages
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          # Install jupyter and nbconvert (always needed)
+          pip install jupyter nbconvert
+          
+          # Install requirements.txt if it exists
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          fi
+
+      - name: Convert Notebooks to HTML
+        run: |
+          mkdir -p public
+          
+          # Find ALL .ipynb files recursively, preserving directory structure
+          find . -name "*.ipynb" -not -path "./public/*" -not -path "./.git/*" | while read notebook; do
+            # Remove leading "./" from path
+            clean_path="${notebook#./}"
+            
+            # Get the directory of the notebook
+            notebook_dir=$(dirname "$clean_path")
+            
+            # Create the corresponding directory in public/
+            mkdir -p "public/$notebook_dir"
+            
+            echo "Converting $clean_path to public/$notebook_dir/"
+            jupyter nbconvert --to html --template lab --output-dir="public/$notebook_dir" "$clean_path" || echo "Warning: Failed to convert $clean_path"
+          done
+          
+          # Copy ALL supporting files (images, data, etc.) - find all non-.ipynb files
+          find . -type f -not -name "*.ipynb" \
+                         -not -path "./public/*" \
+                         -not -path "./.git/*" \
+                         -not -path "./.github/*" \
+                         -not -name "requirements.txt" \
+                         -not -name "README.md" \
+                         -not -name "LICENSE" \
+                         -not -name ".gitignore" \
+                         -not -name "*.yml" \
+                         -not -name "*.py" | while read file; do
+            clean_path="${file#./}"
+            target_dir="public/$(dirname "$clean_path")"
+            mkdir -p "$target_dir"
+            cp "$file" "$target_dir/" 2>/dev/null || true
+          done
+
+          # Clean up notebook headers and inject blog header loader
+          find public -name "*.html" -not -name "index.html" -exec sed -i '/<header class="site-header">/,/<\/header>/d' {} +
+          find public -name "*.html" -not -name "index.html" -exec sed -i 's|<body>|<body><script src="https://chizkidd.github.io/header-loader.js"></script>|' {} +
+
+          # Get repo name and current date
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+          LAST_UPDATED=$(date +"%B %d, %Y")
+          
+          # Get repo title (from README or use repo name)
+          REPO_TITLE=$(grep -m1 "^# " README.md 2>/dev/null | sed 's/^# //' || echo "$REPO_NAME")
+
+          echo "=== Building index for: $REPO_TITLE ==="
+
+          # Generate the index.html landing page
+          cat > public/index.html << HTMLEOF
+          <!DOCTYPE html>
+          <html>
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>$REPO_TITLE</title>
+              <style>
+                  * { margin: 0; padding: 0; }
+                  html, body { height: 100%; }
+                  body {
+                      font-family: Helvetica, Arial, sans-serif;
+                      font-size: 16px;
+                      line-height: 1.5;
+                      font-weight: 300;
+                      background-color: #fdfdfd;
+                      display: grid;
+                      grid-template-rows: auto 1fr auto;
+                      min-height: 100vh;
+                  }
+                  h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
+                  a { color: #2a7ae2; text-decoration: none; }
+                  a:hover { color: #000; text-decoration: underline; }
+                  a:visited { color: #205caa; }
+                  .wrap { max-width: 800px; padding: 0 30px; margin: 0 auto; }
+                  .page-content { padding: 30px 0; background-color: #fff; }
+                  .header-matched-heading {
+                      color: #333;
+                      font-size: 32px;
+                      letter-spacing: -1.2px;
+                      font-weight: 400;
+                      text-align: left;
+                      line-height: 1.1;
+                      margin-top: 30px;
+                      margin-bottom: 25px;
+                  }
+                  .section-heading {
+                      font-size: 20px;
+                      font-weight: 500;
+                      color: #555;
+                      border-bottom: 1px solid #f0f0f0;
+                      padding-bottom: 5px;
+                      margin-top: 40px;
+                      margin-bottom: 15px;
+                  }
+                  .home-nav-list {
+                      padding-left: 20px;
+                      margin-bottom: 30px;
+                      list-style-type: disc;
+                  }
+                  .home-nav-list li { margin-bottom: 8px; }
+                  .home-nav-list a { font-size: 1.0em; font-weight: 300; color: #2a7ae2; }
+                  .home-nav-list a:hover { color: #000; text-decoration: underline; }
+                  .site-footer {
+                      border-top: 1px solid #e8e8e8;
+                      padding: 30px 0;
+                  }
+                  .site-footer p {
+                      font-size: 15px;
+                      letter-spacing: -.3px;
+                      color: #828282;
+                      text-align: center;
+                  }
+                  .site-footer a { color: #2a7ae2; }
+                  .last-updated { margin-top: 10px; font-size: 13px; color: #999; }
+                  @media screen and (max-width: 600px) {
+                      .wrap { padding: 0 12px; }
+                  }
+              </style>
+          </head>
+          <body>
+              <script src="https://chizkidd.github.io/header-loader.js"></script>
+
+              <div class="page-content">
+                  <div class="wrap">
+                      <h1 class="header-matched-heading">$REPO_TITLE</h1>
+                      <div id="notebook-sections"></div>
+                  </div>
+              </div>
+
+              <footer class="site-footer">
+                  <div class="wrap">
+                      <p>
+                          <a href="https://github.com/${GITHUB_REPOSITORY}" target="_blank">View Repository</a>
+                      </p>
+                      <p class="last-updated">Last updated: $LAST_UPDATED</p>
+                  </div>
+              </footer>
+
+              <script>
+                  const sections = document.getElementById('notebook-sections');
+          HTMLEOF
+          
+          # Build JavaScript array of all notebooks
+          echo "        const notebooks = [" >> public/index.html
+          find public -name "*.html" -not -name "index.html" | while read html_file; do
+            # Get relative path from public/
+            rel_path="${html_file#public/}"
+            # Get display name (remove .html, replace underscores/dashes with spaces)
+            display_name=$(basename "$rel_path" .html | sed 's/[_-]/ /g')
+            # Get folder for grouping
+            folder=$(dirname "$rel_path")
+            echo "            {file: '$rel_path', name: '$display_name', folder: '$folder'}," >> public/index.html
+          done
+          echo "        ];" >> public/index.html
+          
+          cat >> public/index.html << 'JSEOF'
+          
+          // Group notebooks by folder
+          const grouped = {};
+          notebooks.forEach(nb => {
+              const folder = nb.folder === '.' ? 'Root' : nb.folder;
+              if (!grouped[folder]) grouped[folder] = [];
+              grouped[folder].push(nb);
+          });
+          
+          // Sort folders and notebooks within folders
+          Object.keys(grouped).sort().forEach(folder => {
+              const section = document.createElement('div');
+              section.className = 'section';
+              
+              const heading = document.createElement('h2');
+              heading.className = 'section-heading';
+              heading.textContent = folder.replace(/[_-]/g, ' ').replace(/\//g, ' / ');
+              section.appendChild(heading);
+              
+              const list = document.createElement('ul');
+              list.className = 'home-nav-list';
+              
+              // Sort notebooks alphabetically
+              grouped[folder].sort((a, b) => a.name.localeCompare(b.name));
+              
+              grouped[folder].forEach(nb => {
+                  const li = document.createElement('li');
+                  const a = document.createElement('a');
+                  a.href = nb.file;
+                  a.textContent = nb.name;
+                  li.appendChild(a);
+                  list.appendChild(li);
+              });
+              
+              section.appendChild(list);
+              sections.appendChild(section);
+          });
+              </script>
+          </body>
+          </html>
+          JSEOF
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'public'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
