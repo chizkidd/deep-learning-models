@@ -72,5 +72,10 @@ A collection of various deep learning architectures, models, &amp; their impleme
 
 |Title | Dataset | Notebooks |
 | --- | --- | --- | 
-| Simple single-layer RNN (Elman) | [IMDB](https://huggingface.co/datasets/stanfordnlp/imdb) |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn-simple-imdb.ipynb)  |
-| Simple single-layer RNN (Elman) | [AG News](https://huggingface.co/datasets/fancyzhx/ag_news) |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn-simple-AGnews.ipynb)  |
+| Simple single-layer RNN ([Elman](https://onlinelibrary.wiley.com/doi/abs/10.1207/s15516709cog1402_1)) | [IMDB](https://huggingface.co/datasets/stanfordnlp/imdb) |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn-simple-imdb.ipynb)  |
+| Simple single-layer RNN ([Elman](https://onlinelibrary.wiley.com/doi/abs/10.1207/s15516709cog1402_1)) | [AG News](https://huggingface.co/datasets/fancyzhx/ag_news) |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn-simple-AGnews.ipynb)  |
+
+<br><br>
+_Currently ongoing ..._
+
+---
