@@ -65,3 +65,12 @@ A collection of various deep learning architectures, models, &amp; their impleme
 |Title | Dataset | Notebooks |
 | --- | --- | --- | 
 | EfficientNet-B0 | CIFAR-10 |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/efficientnet-B0-cifar10.ipynb)  
+
+## Recurrent Neural Networks (RNN)
+
+#### Many-to-one: Sentiment Analysis / Classification
+
+|Title | Dataset | Notebooks |
+| --- | --- | --- | 
+| Simple single-layer RNN (Elman) | [IMDB](https://huggingface.co/datasets/stanfordnlp/imdb) |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn-simple-imdb.ipynb)  |
+| Simple single-layer RNN (Elman) | [AG News](https://huggingface.co/datasets/fancyzhx/ag_news) |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn-simple-AGnews.ipynb)  |
