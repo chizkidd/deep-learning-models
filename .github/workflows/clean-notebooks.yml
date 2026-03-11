@@ -1,0 +1,75 @@
+name: Colab to GitHub Notebook Metadata Sanitizer
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '**.ipynb'
+  workflow_dispatch:
+
+jobs:
+  fix-notebook-render:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install nbformat
+        run: pip install nbformat
+
+      - name: Clean Notebooks
+        run: |
+          python - <<EOF
+          import nbformat
+          import glob
+          
+          fixed_count = 0
+          for path in glob.glob("**/*.ipynb", recursive=True):
+              # Skip checkpoint files
+              if '.ipynb_checkpoints' in path:
+                  continue
+                  
+              with open(path, 'r', encoding='utf-8') as f:
+                  nb = nbformat.read(f, as_version=4)
+              
+              modified = False
+              
+              # 1. Strip widget metadata (Fixes GitHub 'state' error)
+              if 'widgets' in nb.metadata:
+                  del nb.metadata['widgets']
+                  print(f"✓ Fixed metadata in {path}")
+                  modified = True
+              
+              # 2. Clear problematic outputs (Login widgets and HTML videos)
+              for cell in nb.cells:
+                  if cell.cell_type == 'code':
+                      source = cell.source.lower()
+                      if 'notebook_login' in source or '%%html' in source:
+                          if cell.outputs:
+                              cell.outputs = []
+                              print(f"✓ Cleared widget/video output in {path}")
+                              modified = True
+              
+              if modified:
+                  with open(path, 'w', encoding='utf-8') as f:
+                      nbformat.write(nb, f)
+                  fixed_count += 1
+          
+          print(f"\nTotal notebooks fixed: {fixed_count}")
+          EOF
+
+      - name: Commit and Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🤖 chore: sanitize notebooks for GitHub rendering [skip ci]"
+          file_pattern: "*.ipynb **/*.ipynb"
+          commit_user_name: github-actions[bot]
+          commit_user_email: github-actions[bot]@users.noreply.github.com

@@ -1,2 +1,4 @@
 watermark
 torchinfo
+nbconvert
+jupyter
