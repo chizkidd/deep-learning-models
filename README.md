@@ -80,6 +80,14 @@ A collection of various deep learning architectures, models, &amp; their impleme
 | Simple single-layer [GRU](https://arxiv.org/pdf/1406.1078) | [AG News](https://huggingface.co/datasets/fancyzhx/ag_news) |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn/rnn-gru-agnews.ipynb)  |
 | [Bidirectional GRU](https://arxiv.org/pdf/1409.0473) | [AG News](https://huggingface.co/datasets/fancyzhx/ag_news) |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn/rnn-gru-bi-agnews.ipynb)  |
 
+
+#### Many-to-Many / Sequence-to-Sequence: Text Generation
+
+|Title | Dataset | Notebooks |
+| --- | --- | --- | 
+| Character-level RNN (GRU) | [Tiny Shakespeare](https://github.com/karpathy/char-rnn/blob/master/data/tinyshakespeare/input.txt) | [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch_ipynb/rnn/rnn-char-gru-tinyshakespeare.ipynb) |
+| Character-level RNN (GRU) | [Wikitext](https://huggingface.co/datasets/Salesforce/wikitext) | [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch_ipynb/rnn/rnn-char-gru-wikitext) |
+
 <br><br>
 
 _Currently ongoing ..._
