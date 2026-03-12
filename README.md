@@ -85,8 +85,8 @@ A collection of various deep learning architectures, models, &amp; their impleme
 
 |Title | Dataset | Notebooks |
 | --- | --- | --- | 
-| Character-level RNN (GRU) | [Tiny Shakespeare](https://github.com/karpathy/char-rnn/blob/master/data/tinyshakespeare/input.txt) | [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch_ipynb/rnn/rnn-char-gru-tinyshakespeare.ipynb) |
-| Character-level RNN (GRU) | [Wikitext](https://huggingface.co/datasets/Salesforce/wikitext) | [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch_ipynb/rnn/rnn-char-gru-wikitext.ipynb) |
+| Character-level RNN (GRU) | [Tiny Shakespeare](https://github.com/karpathy/char-rnn/blob/master/data/tinyshakespeare/input.txt) | [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn/rnn-char-gru-tinyshakespeare.ipynb) |
+| Character-level RNN (GRU) | [Wikitext](https://huggingface.co/datasets/Salesforce/wikitext) | [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorchrnn/rnn-char-gru-wikitext.ipynb) |
 
 <br><br>
 
