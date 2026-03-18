@@ -80,6 +80,7 @@ A collection of various deep learning architectures, models, &amp; their impleme
 | Simple single-layer [GRU](https://arxiv.org/pdf/1406.1078) | [AG News](https://huggingface.co/datasets/fancyzhx/ag_news) |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn/rnn-gru-agnews.ipynb)  |
 | [Bidirectional GRU](https://arxiv.org/pdf/1409.0473) | [AG News](https://huggingface.co/datasets/fancyzhx/ag_news) |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn/rnn-gru-bi-agnews.ipynb)  |
 | [Stacked GRU](https://arxiv.org/pdf/1409.0473) | [AG News](https://huggingface.co/datasets/fancyzhx/ag_news) |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn/rnn-gru-stacked-agnews.ipynb)  |
+| Stacked Bidirectional GRU | [AG News](https://huggingface.co/datasets/fancyzhx/ag_news) |  [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn/rnn-gru-bi-stack-agnews.ipynb)  |
 
 #### Many-to-Many / Sequence-to-Sequence: Text Generation
 
