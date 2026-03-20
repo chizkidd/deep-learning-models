@@ -88,8 +88,15 @@ A collection of various deep learning architectures, models, &amp; their impleme
 | --- | --- | --- | --- |
 | Character-level RNN (GRU) | [Tiny Shakespeare](https://github.com/karpathy/char-rnn/blob/master/data/tinyshakespeare/input.txt) |  | [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn/rnn-char-gru-tinyshakespeare.ipynb) |
 | Character-level RNN (GRU) | [Wikitext](https://huggingface.co/datasets/Salesforce/wikitext) |  | [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn/rnn-char-gru-wikitext.ipynb) |
-| RNN Encoder-Decoder ([Seq2Seq](https://arxiv.org/pdf/1409.3215)) | [Multi30k](https://huggingface.co/datasets/bentrevett/multi30k) | Implementation of [Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation](https://arxiv.org/pdf/1406.1078) (2014) | [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn/seq2seq.ipynb) |
-| Encoder-Decoder with [Bahdanau Attention](https://arxiv.org/pdf/1409.0473) | [Multi30k](https://huggingface.co/datasets/bentrevett/multi30k) | Implementation of [Neural Machine Translation by Jointly Learning to Align and Translate](https://arxiv.org/pdf/1409.0473) (2016) | [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn/seq2seq-attn.ipynb) |
+| RNN Encoder-Decoder ([Seq2Seq](https://arxiv.org/pdf/1409.3215)) | [Multi30k](https://huggingface.co/datasets/bentrevett/multi30k) | Implementation of [Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation](https://arxiv.org/pdf/1406.1078) (2014) | [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn/rnn-seq2seq.ipynb) |
+| Encoder-Decoder with [Bahdanau Attention](https://arxiv.org/pdf/1409.0473) | [Multi30k](https://huggingface.co/datasets/bentrevett/multi30k) | Implementation of [Neural Machine Translation by Jointly Learning to Align and Translate](https://arxiv.org/pdf/1409.0473) (2016) | [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn/rnn-seq2seq-attn.ipynb) |
+
+#### Many-to-Many: Named Entity Recognition (NER)
+
+| Title | Dataset | Description | Notebooks |
+| --- | --- | --- | --- |
+| Bi-LSTM + [CRF](https://arxiv.org/abs/1508.01991) | [CoNLL-2003](https://huggingface.co/datasets/eriktks/conll2003) | Implementation of [Bidirectional LSTM-CRF Models for Sequence Tagging](https://arxiv.org/abs/1508.01991) (2015) | [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn/rnn-ner-bi-lstm-crf.ipynb) |
+| CNN-Bi-LSTM + CRF | [CoNLL-2003](https://huggingface.co/datasets/eriktks/conll2003) | Implementation of [End-to-end Sequence Labeling via Bi-directional LSTM-CNNs-CRF](https://arxiv.org/abs/1603.01354) (2016) using Character-level CNNs | [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn/rnn-ner-cnn-bi-lstm-crf.ipynb) |
 
 <br><br>
 
