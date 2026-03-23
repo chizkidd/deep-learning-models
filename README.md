@@ -96,7 +96,7 @@ A collection of various deep learning architectures, models, &amp; their impleme
 | Title | Dataset | Description | Notebooks |
 | --- | --- | --- | --- |
 | Bi-LSTM + [CRF](https://arxiv.org/abs/1508.01991) | [CoNLL-2003](https://huggingface.co/datasets/eriktks/conll2003) | Implementation of [Bidirectional LSTM-CRF Models for Sequence Tagging](https://arxiv.org/abs/1508.01991) (2015) | [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn/rnn-ner-bi-lstm-crf.ipynb) |
-| CNN-Bi-LSTM + CRF | [CoNLL-2003](https://huggingface.co/datasets/eriktks/conll2003) | Implementation of [End-to-end Sequence Labeling via Bi-directional LSTM-CNNs-CRF](https://arxiv.org/abs/1603.01354) (2016) using Character-level CNNs | [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn/rnn-ner-cnn-bi-lstm-crf.ipynb) |
+| CNN-Bi-LSTM + CRF | [CoNLL-2003](https://huggingface.co/datasets/eriktks/conll2003) | Implementation of [End-to-end Sequence Labeling via Bi-directional LSTM-CNNs-CRF](https://arxiv.org/abs/1603.01354) (2016) | [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn/rnn-ner-cnn-bi-lstm-crf.ipynb) |
 
 <br><br>
 
