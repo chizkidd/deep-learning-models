@@ -98,6 +98,12 @@ A collection of various deep learning architectures, models, &amp; their impleme
 | Bi-LSTM + [CRF](https://arxiv.org/abs/1508.01991) | [CoNLL-2003](https://huggingface.co/datasets/eriktks/conll2003) | Implementation of [Bidirectional LSTM-CRF Models for Sequence Tagging](https://arxiv.org/abs/1508.01991) (2015) | [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn/rnn-ner-bi-lstm-crf.ipynb) |
 | CNN-Bi-LSTM + CRF | [CoNLL-2003](https://huggingface.co/datasets/eriktks/conll2003) | Implementation of [End-to-end Sequence Labeling via Bi-directional LSTM-CNNs-CRF](https://arxiv.org/abs/1603.01354) (2016) | [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn/rnn-ner-cnn-bi-lstm-crf.ipynb) |
 
+#### Many-to-Many: Video Action Recognition (Synchronous)
+
+| Title | Dataset | Description | Notebooks |
+| --- | --- | --- | --- |
+| [Spatial CNN + Bi-LSTM](https://arxiv.org/pdf/1411.4389) | [UCF-101](https://www.crcv.ucf.edu/data/UCF101.php) | Synchronous Many-to-Many video tagging using a frozen ResNet-18 backbone and a Bidirectional LSTM for frame-level action segmentation. | [![PyTorch](https://img.shields.io/badge/Py-Torch-red)](pytorch/rnn/rnn-video-sync-cnn-bi-lstm.ipynb) |
+
 <br><br>
 
 _Currently ongoing ..._
