@@ -1,5 +1,6 @@
 [![Notebooks Deployment Status](https://github.com/chizkidd/deep-learning-models/actions/workflows/deploy-notebooks.yml/badge.svg)](https://github.com/chizkidd/deep-learning-models/actions/workflows/deploy-notebooks.yml)
 [![View Notebooks](https://img.shields.io/badge/View-Live%20Notebooks-blue?logo=github)](https://chizkidd.github.io/deep-learning-models/)
+![visitor badge](https://visitor-badge.laobi.icu/badge?page_id=chizkidd.deep-learning-models)
 
 # Deep Learning Models
 A collection of various deep learning architectures, models, &amp; their implementations (PyTorch or TensorFlow) in Jupyter Notebooks.
