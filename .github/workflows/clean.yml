@@ -1,0 +1,12 @@
+name: Clean notebooks
+on:
+  push:
+    branches: [main]
+    paths: ['**.ipynb']
+  workflow_dispatch:
+
+jobs:
+  clean:
+    uses: chizkidd/chizkidd.github.io/.github/workflows/clean-notebooks.yml@main
+    permissions:
+      contents: write
